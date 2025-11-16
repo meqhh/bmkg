@@ -1,0 +1,82 @@
+.tentang-section h2 {
+  color: #192c50;
+}
+
+#sejarah,
+#tugas,
+#visi,
+#logo {
+  scroll-margin-top: 100px; /* sesuaikan dengan tinggi navbar/header */
+}
+
+/* Header flex: judul kiri, navigasi kanan */
+.tentang-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem; /* beri jarak bawah */
+}
+
+.tentang-header .tentang-tabs {
+  margin-bottom: 0; /* hapus margin default Nav */
+}
+
+/* Tabs */
+.tentang-tabs .nav-link {
+  border-radius: 20px;
+  padding: 6px 16px;
+  color: #192c50;
+}
+
+.tentang-tabs .nav-link:hover {
+  background-color: #eef3fc;
+}
+
+.tentang-tabs .nav-link.active,
+.tentang-tabs .nav-link:focus {
+  background-color: #192c50;
+  color: #fff;
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline li {
+  position: relative;
+  display: flex; /* supaya tahun dan konten sejajar */
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.timeline li .year {
+  min-width: 60px; /* kasih lebar tetap agar rata */
+  font-weight: bold;
+  color: #192c50;
+  margin-right: 40px; /* jarak antara tahun dan garis/tulisan */
+  text-align: right; /* biar tahun rata kanan */
+}
+
+.timeline li p {
+  margin: 0;
+}
+
+/* Garis vertikal */
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: 80px; /* sejajar setelah tahun */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #192c50;
+}
+
+/* Smooth scroll effect */
+html {
+  scroll-behavior: smooth;
+}

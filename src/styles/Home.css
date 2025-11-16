@@ -1,0 +1,101 @@
+.home-section {
+  background-color: #192c50;
+  color: white;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.home-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+section h1 {
+  color: #192c50;
+}
+
+.btn {
+  background-color: #192c50 !important;
+  border-color: #192c50 !important;
+  color: #fff !important;
+}
+
+/* Container */
+section.bg-light {
+  background-color: #ffffff !important;
+}
+
+/* Judul bagian */
+section h3 {
+  color: #192c50;
+  font-weight: 700;
+}
+
+/* Slick spacing */
+.slick-slide > div {
+  margin: 0 16px;
+}
+.slick-list {
+  margin: 0 -8px;
+}
+
+.slick-slide .card {
+  max-width: 270px; /* batasi lebar card */
+  margin: 0 auto; /* biar center */
+  background-color: #eef3fc;
+}
+
+/* Card styling */
+.card {
+  border-radius: 12px;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Ikon cuaca */
+.weather-icon {
+  font-size: 42px;
+  margin: 10px 0;
+}
+
+/* Kota */
+.card h5 {
+  font-weight: bold;
+  color: #192c50;
+}
+
+/* Jam */
+.card p.text-muted {
+  font-size: 14px;
+}
+
+/* Suhu */
+.card h4 {
+  font-weight: bold;
+  font-size: 24px;
+  color: #1d3557;
+}
+
+/* Kondisi */
+.card p {
+  font-size: 14px;
+  margin: 0;
+  font-weight: bold;
+  color: #192c50;
+}
+
+/* Panah slick */
+.slick-prev:before,
+.slick-next:before {
+  color: #192c50;
+  font-size: 20px;
+}

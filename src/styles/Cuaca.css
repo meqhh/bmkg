@@ -1,0 +1,261 @@
+/* CuacaPage */
+/* Section Title */
+.cuaca-section h2 {
+  margin-bottom: 10px;
+  color: #192c50;
+}
+
+.cuaca-section p {
+  margin-bottom: 10px;
+  color: #192c50;
+}
+
+/* Table Wrapper */
+.cuaca-table {
+  border-radius: 10px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* Table with custom background */
+.custom-table {
+  background-color: #eef3fc; /* warna background tabel */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.custom-table th {
+  background-color: #192c50; /* biar header kontras */
+  color: #ffffff;
+  text-align: center;
+  padding: 12px;
+  font-weight: 600;
+}
+
+/* Table Cells */
+.custom-table td {
+  background-color: #eef3fc; /* warna isi tabel */
+  vertical-align: middle;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+/* Small text in cells */
+.cuaca-table td small {
+  color: #555;
+  display: block;
+}
+
+/* Hover effect */
+.custom-table tbody tr:hover td {
+  background-color: #dbe5f9; /* sedikit lebih gelap saat hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Button group */
+.btn-group .btn {
+  margin-right: 5px;
+}
+
+/* Input Search styling */
+.search-input .form-control {
+  border-radius: 20px;
+  padding-left: 35px;
+}
+
+.search-input .input-group-text {
+  background: transparent;
+  border: none;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #192c50;
+}
+
+.weather-icon {
+  color: #192c50;
+}
+
+/* CuacaDetailPage */
+/* Detail Cuaca */
+.cuaca-detail h2 {
+  color: #192c50;
+}
+
+/* Wrapper umum biar sejajar dengan navbar */
+.cuaca-container {
+  max-width: 1200px; /* sesuaikan dengan lebar navbar */
+  margin: 0 auto; /* biar center */
+  padding: 0 20px; /* biar ada space kiri kanan */
+}
+
+.current-weather-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #eef3fc;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* container utama agar icon & teks sejajar */
+.weather-main {
+  display: flex;
+  align-items: center; /* sejajarkan vertikal */
+  justify-content: center; /* center di tengah */
+  gap: 20px; /* jarak antar icon dan teks */
+  text-align: left; /* teks rata kiri */
+  padding-left: 50px;
+}
+
+/* icon */
+.weather-main .weather-icon {
+  font-size: 64px;
+  color: #007bff; /* biru */
+  flex-shrink: 0; /* biar tidak mengecil */
+}
+
+/* info suhu & kondisi */
+.weather-main .weather-info h3 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.weather-main .weather-info p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.weather-icon-large {
+  color: #192c50;
+}
+
+.weather-hourly {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  gap: 16px;
+}
+
+.weather-hour-card {
+  background: #eef3fc;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1 1 calc(25% - 16px); /* 4 card dalam 1 baris */
+  min-width: 100px; /* minimal biar tetap rapi */
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.weather-hour-card h6 {
+  color: #192c50;
+}
+
+.weather-hour-card p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cuaca-container {
+  display: flex; /* pakai flex supaya mudah sejajar */
+  flex-wrap: wrap; /* biar kalau kebanyakan bisa turun ke bawah */
+  justify-content: center; /* posisi ke tengah */
+  gap: 16px; /* jarak antar kartu, bisa kamu kecilkan */
+  margin-top: 20px;
+}
+
+.cuaca-header {
+  margin-bottom: 20px;
+}
+
+.cuaca-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.cuaca-header p {
+  color: #555;
+}
+
+/* Saat Ini */
+.cuaca-saat-ini .box-cuaca {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f3f7fd;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.box-cuaca .info-suhu h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.box-cuaca .detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Harian */
+.cuaca-harian {
+  margin-top: 40px;
+}
+
+.cuaca-harian h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tanggal-btn {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.tanggal-btn button {
+  padding: 6px 12px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+}
+
+.cuaca-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.cuaca-card {
+  background-color: #f0f7ff; /* warna bg */
+  border-radius: 16px;
+  padding: 16px;
+  width: 180px; /* lebar kartu */
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cuaca-card h3 {
+  font-size: 22px;
+  margin: 8px 0;
+}
+
+.cuaca-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.cuaca-card ul li {
+  margin: 4px 0;
+}
