@@ -29,6 +29,9 @@ export async function loadWeather() {
     const resBmkg = await axios.get(`/bmkg/prakiraan-cuaca?adm4=${randKelurahan.code}`);
     const fetchBMKG = resBmkg.data;
     console.log(resBmkg);
+    if (resBmkg && resBmkg.status !== 200) {
+        throw new Error("Error To Call BMKG API");
+    }
 
     const times = fetchBMKG.data[0].cuaca;
     result.push({

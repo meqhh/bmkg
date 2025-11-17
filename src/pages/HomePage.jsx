@@ -75,7 +75,6 @@ return (
 								kel.cuaca.map((c, idx) => (
 									<div key={`${kel.kelurahan}-${idx}`}>
 										<Card className="shadow-sm text-center p-3">
-											<h5>{kel.desa}</h5>
 											<p className="text-muted">
 												{new Date(c.local_datetime).toLocaleDateString("id-ID", {
 													day: "2-digit",
