@@ -259,3 +259,11 @@
 .cuaca-card ul li {
   margin: 4px 0;
 }
+
+.kabupaten {
+  min-height: 55vh;
+}
+
+.detail-cuaca-spinner {
+  min-height: 40vh;
+}

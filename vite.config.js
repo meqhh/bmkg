@@ -6,30 +6,30 @@ export default defineConfig({
     plugins: [react()],
     server: {
         proxy: {
-            "/provinsi": {
+            "/api-provinsi": {
                 target: env.api.provinsi,
                 changeOrigin: true,
-                rewrite: p => p.replace(/^\/provinsi/, ""),
+                rewrite: p => p.replace(/^\/api-provinsi/, ""),
             },
-            "/kabupaten": {
+            "/api-kabupaten": {
                 target: env.api.kabupaten,
                 changeOrigin: true,
-                rewrite: p => p.replace(/^\/kabupaten/, ""),
+                rewrite: p => p.replace(/^\/api-kabupaten/, ""),
             },
-            "/kecamatan": {
+            "/api-kecamatan": {
                 target: env.api.kecamatan,
                 changeOrigin: true,
-                rewrite: p => p.replace(/^\/kecamatan/, ""),
+                rewrite: p => p.replace(/^\/api-kecamatan/, ""),
             },
-            "/kelurahan": {
+            "/api-kelurahan": {
                 target: env.api.kelurahan,
                 changeOrigin: true,
-                rewrite: p => p.replace(/^\/kelurahan/, ""),
+                rewrite: p => p.replace(/^\/api-kelurahan/, ""),
             },
-            "/bmkg": {
+            "/api-bmkg": {
                 target: env.api.bmkgCuaca,
                 changeOrigin: true,
-                rewrite: p => p.replace(/^\/bmkg/, ""),
+                rewrite: p => p.replace(/^\/api-bmkg/, ""),
             },
         },
     },

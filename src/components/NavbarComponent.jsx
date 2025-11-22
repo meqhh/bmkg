@@ -37,7 +37,7 @@ export default function NavbarComponent() {
             <Nav.Link as={RouterLink} to="/">
               Beranda
             </Nav.Link>
-            <Nav.Link as={RouterLink} to="/cuaca">
+            <Nav.Link as={RouterLink} to="/provinsi-list">
               Cuaca
             </Nav.Link>
             <Nav.Link as={RouterLink} to="/tentang">

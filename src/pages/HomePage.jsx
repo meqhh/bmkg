@@ -42,7 +42,7 @@ return (
                         </h1>
                         <Button
                             as={RouterLink}
-                            to="/cuaca"
+                            to="/provinsi-list"
                             variant="primary"
                             size="lg"
                             className="mt-3 btn"
@@ -68,7 +68,7 @@ return (
 				{isReady && (
 					<>
 						<h3 className="fw-bold mb-4">
-							{`Prakiraan Cuaca ${weather.lokasi}`}
+							{`Prakiraan Cuaca:  ${weather.lokasi}`}
 						</h3>
 						<Slider {...settings}>
 							{weather.data.flatMap((kel) =>
