@@ -11,6 +11,7 @@ import {
 import "../styles/Cuaca.css";
 import { weatherKelurahan, windDirectionTranslate, FormatTanggalDetailCuaca } from "../hooks/WeatherHook";
 import { MdHeight } from "react-icons/md";
+import Slider from "react-slick";
 
 export default function CuacaDetailPage() {
     const settings = {
@@ -29,18 +30,19 @@ export default function CuacaDetailPage() {
     const { kelCode } = useParams();
     const [bmkgData, setBMKG] = useState(null);
     const [current, setCurrentWeather] = useState(null);
+    const [dataForecast, setForecast] = useState([]);
     const [isReady, setReady] = useState(false);
     useEffect(() => {
         weatherKelurahan(kelCode).then(data => {
             setBMKG(data);
+            const dataForecast = data.data[0].cuaca.flat();
+            setForecast(dataForecast);
             setCurrentWeather(data.data[0].cuaca[0][0]);
-            setReady(true);
+            if (data.data.length) {
+                setReady(true);
+            };
         });
     }, [kelCode]);
-
-    if (isReady) {
-        console.log(bmkgData);
-    }
 
 
 return (
@@ -100,17 +102,38 @@ return (
 
                 {/* Forecast Harian */}
                 <h4 className="fw-bold mb-3">Perkiraan Cuaca {FormatTanggalDetailCuaca()}</h4>
-                <div className="weather-hourly">
-                    {[1, 2, 3, 4].map((i) => (
-                        <div className="weather-hour-card" key={i}>
-                            <p className="fw-bold text-muted">09.00 WIB</p>
-                            <FaCloudRain className="weather-icon" />
-                            <h5 className="fw-bold">26°C</h5>
-                            <p className="mb-1">Hujan Ringan</p>
-                            <small className="text-muted">84% | 13 Km/jam</small>
+                <Slider {...settings}>
+                    {dataForecast.map((c, idx) => (
+                        <div key={idx}>
+                            <Card className="shadow-sm text-center weather-hour-card">
+                                <p className="text-muted fw-bold">
+                                    {new Date(c.local_datetime).toLocaleDateString("id-ID", {
+                                        day: "2-digit",
+                                        month: "long",
+                                        year: "numeric"
+                                    })}
+                                    {" • "}
+                                    {new Date(c.local_datetime).toLocaleTimeString("id-ID", {
+                                        hour: "2-digit",
+                                        minute: "2-digit"
+                                    })}
+                                </p>
+                                <img
+                                    src={c.image}
+                                    alt={c.weather_desc}
+                                    width="60"
+                                    height="60"
+                                    className="d-block mx-auto my-2"
+                                />
+                                <h5 className="fw-bold">{c.t}°C</h5>
+                                <p className="mb-1">{c.weather_desc}</p>
+                                <small className="text-muted">
+                                    {c.hu}% | {c.ws} Km/jam
+                                </small>
+                            </Card>
                         </div>
                     ))}
-                </div>
+                </Slider>
             </>
             )}
         </Container>
