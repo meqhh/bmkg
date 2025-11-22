@@ -12,21 +12,10 @@ import "../styles/Cuaca.css";
 import { weatherKelurahan, windDirectionTranslate, FormatTanggalDetailCuaca } from "../hooks/WeatherHook";
 import { MdHeight } from "react-icons/md";
 import Slider from "react-slick";
+import { CarouselSetting } from "../hooks/CarouselData";
 
 export default function CuacaDetailPage() {
-    const settings = {
-		dots: false,
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 3000,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		arrows: true,
-		responsive: [
-			{ breakpoint: 992, settings: { slidesToShow: 2 } },
-			{ breakpoint: 576, settings: { slidesToShow: 1 } },
-		],
-	};
+    const settings = CarouselSetting;
     const { kelCode } = useParams();
     const [bmkgData, setBMKG] = useState(null);
     const [current, setCurrentWeather] = useState(null);

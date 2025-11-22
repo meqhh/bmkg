@@ -4,22 +4,11 @@ import Slider from "react-slick";
 import "../styles/Home.css";
 import { Container, Row, Col, Button, Card, Spinner } from "react-bootstrap";
 import { loadWeather } from "../hooks/WeatherHook";
+import { CarouselSetting } from "../hooks/CarouselData";
 
 export default function HomePage() {
 	// Setting carousel
-	const settings = {
-		dots: false,
-		infinite: true,
-		autoplay: true,
-		autoplaySpeed: 3000,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-		arrows: true,
-		responsive: [
-			{ breakpoint: 992, settings: { slidesToShow: 2 } },
-			{ breakpoint: 576, settings: { slidesToShow: 1 } },
-		],
-	};
+	const settings = CarouselSetting;
     const [isReady, setReady] = useState(false);
     const [weather, setWeather] = useState(null);
 
